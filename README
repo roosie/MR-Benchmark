@@ -1,0 +1,15 @@
+This is a repo for testing rabbitmq and redis message tranfer speed/efficiency between containers. Both technologies have their pros, cons, and use-cases not intended for this but I digress. 
+
+TODO: 
+- Determine best way to prevent race conditions on rabbitmq # fixed by adding hashmap to serve as state
+- Implement redis (should be much easier than rabbit) # Implement suboptimally to give a fairer apples to apples comparison to what rabbitmq is doing
+- Shift to k8s for scaling 
+
+Current findings: 
+- RabbitMQ takes 2.1s to sum 16 ints between 16 containers + RabbitMQ
+- Redis takes 1.3s to sum 16 ints between 16 containers + Redis
+
+Methodology
+- Run map reduce to sum all of the node ids and have that value distributed among all machines 
+- This should take about log(n)n messages 
+

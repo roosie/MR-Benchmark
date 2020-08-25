@@ -1,0 +1,116 @@
+version: '3'
+services:
+  worker1:
+    build: .
+    environment:
+      - self=1
+      - count=16
+    depends_on:
+      - rabbit
+  worker2:
+    build: .
+    environment:
+      - self=2
+      - count=16
+    depends_on:
+      - rabbit
+  worker3:
+    build: .
+    environment:
+      - self=3
+      - count=16
+    depends_on:
+      - rabbit
+  worker4:
+    build: .
+    environment:
+      - self=4
+      - count=16
+    depends_on:
+      - rabbit
+  worker5:
+    build: .
+    environment:
+      - self=5
+      - count=16
+    depends_on:
+      - rabbit
+  worker6:
+    build: .
+    environment:
+      - self=6
+      - count=16
+    depends_on:
+      - rabbit
+  worker7:
+    build: .
+    environment:
+      - self=7
+      - count=16
+    depends_on:
+      - rabbit
+  worker0:
+    build: .
+    environment:
+      - self=0
+      - count=16
+    depends_on:
+      - rabbit
+  worker8:
+    build: .
+    environment:
+      - self=8
+      - count=16
+    depends_on:
+      - rabbit
+  worker9:
+    build: .
+    environment:
+      - self=9
+      - count=16
+    depends_on:
+      - rabbit
+  worker10:
+    build: .
+    environment:
+      - self=10
+      - count=16
+    depends_on:
+      - rabbit
+  worker11:
+    build: .
+    environment:
+      - self=11
+      - count=16
+    depends_on:
+      - rabbit
+  worker12:
+    build: .
+    environment:
+      - self=12
+      - count=16
+    depends_on:
+      - rabbit
+  worker13:
+    build: .
+    environment:
+      - self=13
+      - count=16
+    depends_on:
+      - rabbit
+  worker14:
+    build: .
+    environment:
+      - self=14
+      - count=16
+    depends_on:
+      - rabbit
+  worker15:
+    build: .
+    environment:
+      - self=15
+      - count=16
+    depends_on:
+      - rabbit
+  rabbit:
+    image: "rabbitmq:latest"
